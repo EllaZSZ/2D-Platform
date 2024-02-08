@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
     Rigidbody2D rb;
+    Vector3 vineDir = Vector3.zero;
+    bool vineOut = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,23 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(new Vector3(0, speed, 0));
+            //rb.AddForce(new Vector3(0, speed, 0));
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetMouseButton(0))
         {
-            rb.AddForce(new Vector3(0, -speed, 0));
+            if (!vineOut)
+            {
+                vineDir = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                vineDir.z = transform.position.z;
+                vineDir = vineDir - transform.position;
+                vineDir.Normalize();
+                vineOut = true;
+                transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(vineDir.x, vineDir.y));
+                //add vine shoot
+            }
+        } else
+        {
+            vineOut = false;
         }
     }
 }
