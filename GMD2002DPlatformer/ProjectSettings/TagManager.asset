@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Solids
   - MovingPlatform
+  - Hazards
+  - Checkpoints
   layers:
   - Default
   - TransparentFX
