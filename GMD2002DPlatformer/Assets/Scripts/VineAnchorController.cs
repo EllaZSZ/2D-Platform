@@ -10,11 +10,12 @@ public class VineAnchorController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
     }
-    void OnCollision2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.gameObject.tag == "Solids")
+        if (collision.gameObject.tag == "Solids")
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         }
     }
+    
 }

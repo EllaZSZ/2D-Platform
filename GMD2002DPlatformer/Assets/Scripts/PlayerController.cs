@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody2D rb;
+    [SerializeField] private GameObject vinePrefab;
     private GameObject vine;
     private GameObject vineAnchor;
     private Vector3 vineDir = Vector3.zero;
@@ -21,9 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        vine = GameObject.Find("Vine");
-        vineAnchor = GameObject.Find("Anchor");
-        vine.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -44,12 +43,12 @@ public class PlayerController : MonoBehaviour
                 vineEnd = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 vineEnd.z = transform.position.z;
                 vineOut = true;
-                vine.SetActive(true);
                 vineDir = vineEnd - transform.position;
                 vineDir.Normalize();
-                vine.transform.position = new Vector3(0, 1, 0);
-                vineAnchor.transform.position = new Vector3(0, 1, 0);
-                vineAnchor.GetComponent<Rigidbody2D>().AddForce(vineDir * 3 * speed);
+                vine = Instantiate(vinePrefab, transform.position + new Vector3(0, 1, 0), Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(vineDir.y, vineDir.x) * Mathf.Rad2Deg)), transform);
+                vine.transform.GetChild(6).GetComponent<HingeJoint2D>().connectedBody = rb;
+                vineAnchor = vine.transform.GetChild(0).gameObject;
+                vineAnchor.GetComponent<Rigidbody2D>().AddForce(vineDir * 2000);
             }
             if (Input.GetMouseButton(1))
             {
@@ -60,7 +59,7 @@ public class PlayerController : MonoBehaviour
         } else
         {
             vineOut = false;
-            vine.SetActive(false);
+            Destroy(vine);
         }
     }
     private void Update()
