@@ -5,6 +5,7 @@ using UnityEngine;
 public class VineAnchorController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public bool attached = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -15,6 +16,7 @@ public class VineAnchorController : MonoBehaviour
         if (collision.gameObject.tag == "Solids")
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            attached = true;
         }
     }
     

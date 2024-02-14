@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 vineAnchor = vine.transform.GetChild(0).gameObject;
                 vineAnchor.GetComponent<Rigidbody2D>().AddForce(vineDir * 2000);
             }
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(1) && vineAnchor.GetComponent<VineAnchorController>().attached)
             {
                 Vector3 vel = vineAnchor.transform.position - transform.position;
                 vel.Normalize();
