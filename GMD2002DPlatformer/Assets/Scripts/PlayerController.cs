@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -29,17 +30,26 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.A)) {
-            rb.AddForce(new Vector3(-speed, 0, 0));
+            rb.AddForce(new Vector3(-speed*rb.mass, 0, 0));
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(new Vector3(speed, 0, 0));
+            rb.AddForce(new Vector3(speed*rb.mass, 0, 0));
         }
-        
+
         if (Input.GetMouseButton(0))
         {
-            if (!vineOut)
-            {
+            if (vineOut) {
+                //if (Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) > 6)
+                //{
+                //    vine.transform.GetChild(1).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //    vine.transform.GetChild(2).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //    vine.transform.GetChild(3).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //    vine.transform.GetChild(4).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //    vine.transform.GetChild(5).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //    vine.transform.GetChild(6).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
+                //}
+            } else {
                 vineEnd = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 vineEnd.z = transform.position.z;
                 vineOut = true;

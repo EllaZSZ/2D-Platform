@@ -15,7 +15,7 @@ public class VineAnchorController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Solids")
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            rb.bodyType = RigidbodyType2D.Static;
             attached = true;
         }
     }
