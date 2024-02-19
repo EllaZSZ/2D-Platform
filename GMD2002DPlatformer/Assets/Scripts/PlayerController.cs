@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
                 vineOut = true;
                 vineDir = vineEnd - transform.position;
                 vineDir.Normalize();
-                vine = Instantiate(vinePrefab, transform.position + new Vector3(0, 1, 0), Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(vineDir.y, vineDir.x) * Mathf.Rad2Deg)), transform);
+                vine = Instantiate(vinePrefab, transform.position + new Vector3(0, 1, 0), Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(vineDir.y, vineDir.x) * Mathf.Rad2Deg)) );//, transform);
                 vine.transform.GetChild(6).GetComponent<HingeJoint2D>().connectedBody = rb;
                 vineAnchor = vine.transform.GetChild(0).gameObject;
                 vineAnchor.GetComponent<Rigidbody2D>().AddForce(vineDir * 2000);
@@ -69,21 +69,18 @@ public class PlayerController : MonoBehaviour
 
 
     // Written by Arija for Moving Platforms
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform")) {
-            transform.SetParent(other.transform, true);
-        }
-    }
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            transform.SetParent(null, true);
-        }
-    }
-    private void Update()
-    {
-        
-    }
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("MovingPlatform"))
+    //    {
+    //        transform.SetParent(other.transform, true);
+    //    }
+    //}
+    //private void OnCollisionExit2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("MovingPlatform"))
+    //    {
+    //        transform.SetParent(null, true);
+    //    }
+    //}
 }
