@@ -359,7 +359,6 @@ GameObject:
   - component: {fileID: 257449423}
   - component: {fileID: 257449422}
   - component: {fileID: 257449421}
-  - component: {fileID: 257449420}
   m_Layer: 0
   m_Name: StartFlower
   m_TagString: Checkpoints
@@ -367,20 +366,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &257449420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257449419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 0
-  levelEnd: 0
 --- !u!61 &257449421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -778,7 +763,6 @@ GameObject:
   - component: {fileID: 550995788}
   - component: {fileID: 550995787}
   - component: {fileID: 550995786}
-  - component: {fileID: 550995785}
   m_Layer: 0
   m_Name: EndFlower
   m_TagString: Checkpoints
@@ -786,20 +770,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &550995785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550995784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 2
-  levelEnd: 1
 --- !u!61 &550995786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18054,7 +18024,6 @@ GameObject:
   - component: {fileID: 1520330811}
   - component: {fileID: 1520330810}
   - component: {fileID: 1520330809}
-  - component: {fileID: 1520330808}
   m_Layer: 0
   m_Name: MidFlower
   m_TagString: Checkpoints
@@ -18062,20 +18031,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1520330808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520330807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 1
-  levelEnd: 0
 --- !u!61 &1520330809
 BoxCollider2D:
   m_ObjectHideFlags: 0

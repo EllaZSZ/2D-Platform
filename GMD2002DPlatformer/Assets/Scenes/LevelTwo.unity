@@ -942,7 +942,6 @@ GameObject:
   - component: {fileID: 822445275}
   - component: {fileID: 822445274}
   - component: {fileID: 822445273}
-  - component: {fileID: 822445272}
   m_Layer: 0
   m_Name: StartFlower
   m_TagString: Checkpoints
@@ -950,18 +949,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &822445272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822445271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &822445273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17935,7 +17922,6 @@ GameObject:
   - component: {fileID: 1466471786}
   - component: {fileID: 1466471785}
   - component: {fileID: 1466471784}
-  - component: {fileID: 1466471783}
   m_Layer: 0
   m_Name: MidFlower
   m_TagString: Checkpoints
@@ -17943,18 +17929,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1466471783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466471782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1466471784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18078,7 +18052,6 @@ GameObject:
   - component: {fileID: 1527366883}
   - component: {fileID: 1527366882}
   - component: {fileID: 1527366881}
-  - component: {fileID: 1527366880}
   m_Layer: 0
   m_Name: EndFlower
   m_TagString: Checkpoints
@@ -18086,18 +18059,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1527366880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527366879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1527366881
 BoxCollider2D:
   m_ObjectHideFlags: 0
