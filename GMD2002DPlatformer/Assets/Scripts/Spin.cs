@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Spin : MonoBehaviour
 {
+    public bool moving = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,9 @@ public class Spin : MonoBehaviour
     void Update()
     {
         // YouTube Tutorial Link: https://www.youtube.com/watch?v=K3Ap2_beGnE
-        transform.Rotate(0, 0, 10 * Time.deltaTime, Space.Self);
+        if (moving)
+        {
+            transform.Rotate(0, 0, 10 * Time.deltaTime, Space.Self);
+        }
     }
 }

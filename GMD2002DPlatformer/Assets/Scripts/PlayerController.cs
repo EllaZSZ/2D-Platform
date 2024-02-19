@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
@@ -14,11 +15,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject vinePrefab;
     [SerializeField] private float horizontalDrag;
+    [SerializeField] private string nextScene;
     private GameObject vine;
     private GameObject vineAnchor;
     private Vector3 vineDir = Vector3.zero;
     private Vector3 vineEnd = Vector3.zero;
     private bool vineOut = false;
+    private int checkpoint = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -61,13 +64,44 @@ public class PlayerController : MonoBehaviour
             }
         } else
         {
-            vineOut = false;
-            Destroy(vine);
+            if (vineOut)
+            {
+                vineOut = false;
+                if (vineAnchor.GetComponent<VineAnchorController>().stoppedPlatform)
+                {
+                    vineAnchor.GetComponent<VineAnchorController>().platform.GetComponent<MovingPlatform>().moving = true;
+                }
+                else if (vineAnchor.GetComponent<VineAnchorController>().stoppedSpin)
+                {
+                    vineAnchor.GetComponent<VineAnchorController>().platform.GetComponent<Spin>().moving = true;
+                }
+                Destroy(vine);
+            }
         }
         rb.totalForce = new Vector2(rb.totalForce.x * horizontalDrag, rb.totalForce.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Checkpoints")
+        {
+            checkpoint = collision.GetComponent<FlowerFunctions>().checkpointNum;
+            if (collision.GetComponent<FlowerFunctions>().levelEnd)
+            {
+                SceneManager.LoadScene(nextScene);
+            }
+        }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Hazards")
+        {
+            transform.position = FlowerFunctions.checkpointLocations[checkpoint];
+            
+            ValueHolder.deaths++;
+        }
+    }
     // Written by Arija for Moving Platforms
     //private void OnCollisionEnter2D(Collision2D other)
     //{

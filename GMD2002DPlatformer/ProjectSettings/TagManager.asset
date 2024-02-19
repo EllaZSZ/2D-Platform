@@ -8,6 +8,7 @@ TagManager:
   - MovingPlatform
   - Hazards
   - Checkpoints
+  - SpinningPlatform
   layers:
   - Default
   - TransparentFX
