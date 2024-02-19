@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8415946986710814105}
   - component: {fileID: 7571680989029274316}
   - component: {fileID: 5886339978245423186}
+  - component: {fileID: 3216128791096043853}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 3905246662929120685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.88, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0, y: -0.858, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -1047292863, guid: 58e57b1d035000248b8a226eb1676293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   speed: 50
   vinePrefab: {fileID: 4181102754972840397, guid: f4c005bc2a0312340a37bc82e5dbc973, type: 3}
   horizontalDrag: 0.7
+  nextScene: 
 --- !u!70 &8415946986710814105
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,8 +137,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.040760897, y: -0.057065412}
+  m_Size: {x: 0.5244566, y: 0.86413056}
   m_Direction: 0
 --- !u!50 &7571680989029274316
 Rigidbody2D:
@@ -178,3 +180,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: {fileID: 3822289665486814240, guid: 90883c5c443ccc54faac6521ee843e1b, type: 3}
+--- !u!95 &3216128791096043853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905246662929120685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4cc63e330622b9449d0a752e911ce73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
