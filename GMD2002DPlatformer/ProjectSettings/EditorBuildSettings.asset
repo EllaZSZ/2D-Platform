@@ -9,6 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: a7723aed87b174a419c0aec62c85ab37
   - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: e2b48a01d70bb984e9f6ea976509da93
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/CocoaTest.unity
+    guid: b5315f5d4a116f445bcd6641e27543af
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 8643b9f396b7cfb4584f0eb1db0a537b
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: 2640d0c60d87a704281ef230a0ef8484
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: fabf29a0da0262f47b879c58dbceb5b8
   m_configObjects: {}
