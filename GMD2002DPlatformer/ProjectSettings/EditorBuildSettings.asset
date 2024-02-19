@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelThree.unity
     guid: fabf29a0da0262f47b879c58dbceb5b8
+  - enabled: 1
+    path: Assets/Scenes/Escapism.unity
+    guid: be06a677771429f4dbeebcc2ffe21fa6
   m_configObjects: {}
