@@ -72,6 +72,22 @@ public class PlayerController : MonoBehaviour
             Destroy(vine);
         }
     }
+
+
+    // Written by Arija for Moving Platforms
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform")) {
+            transform.SetParent(other.transform, true);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(null, true);
+        }
+    }
     private void Update()
     {
         
