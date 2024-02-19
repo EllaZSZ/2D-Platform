@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject vinePrefab;
     [SerializeField] private float horizontalDrag;
-    [SerializeField] private string nextScene;
     private GameObject vine;
     private GameObject vineAnchor;
     private Vector3 vineDir = Vector3.zero;
@@ -81,40 +80,4 @@ public class PlayerController : MonoBehaviour
         rb.totalForce = new Vector2(rb.totalForce.x * horizontalDrag, rb.totalForce.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Checkpoints")
-        {
-            checkpoint = collision.GetComponent<FlowerFunctions>().checkpointNum;
-            if (collision.GetComponent<FlowerFunctions>().levelEnd)
-            {
-                SceneManager.LoadScene(nextScene);
-            }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Hazards")
-        {
-            transform.position = FlowerFunctions.checkpointLocations[checkpoint];
-            
-            ValueHolder.deaths++;
-        }
-    }
-    // Written by Arija for Moving Platforms
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("MovingPlatform"))
-    //    {
-    //        transform.SetParent(other.transform, true);
-    //    }
-    //}
-    //private void OnCollisionExit2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("MovingPlatform"))
-    //    {
-    //        transform.SetParent(null, true);
-    //    }
-    //}
 }

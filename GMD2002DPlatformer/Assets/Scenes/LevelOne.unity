@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 150502702}
   - component: {fileID: 150502701}
   - component: {fileID: 150502700}
-  - component: {fileID: 150502699}
   m_Layer: 0
   m_Name: MidFlower
   m_TagString: Checkpoints
@@ -142,20 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &150502699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150502698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 1
-  levelEnd: 0
 --- !u!61 &150502700
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -903,21 +888,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2837871773377660221, guid: 39737183ba482094889e02383bb1b033, type: 3}
-      propertyPath: nextScene
-      value: LevelTwo
-      objectReference: {fileID: 0}
     - target: {fileID: 3905246662929120685, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4177528305422905945, guid: 39737183ba482094889e02383bb1b033, type: 3}
+      propertyPath: DeathDisplayScript
+      value: 
+      objectReference: {fileID: 2084047488}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.11
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.05
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.z
@@ -951,8 +936,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5886339978245423186, guid: 39737183ba482094889e02383bb1b033, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -988,6 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cf6d7aaaccb2f47b7898b164268e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: LevelTwo
 --- !u!58 &719556310
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1017,7 +1002,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1084,7 +1069,7 @@ Transform:
   m_GameObject: {fileID: 719556308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 56.82, z: 0}
+  m_LocalPosition: {x: -4.02, y: 61.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1768,6 +1753,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -8, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 9, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -1779,16 +1774,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -10, y: 2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -8, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -4508,7 +4493,6 @@ GameObject:
   - component: {fileID: 1135981139}
   - component: {fileID: 1135981138}
   - component: {fileID: 1135981137}
-  - component: {fileID: 1135981136}
   m_Layer: 0
   m_Name: EndFlower
   m_TagString: Checkpoints
@@ -4516,20 +4500,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1135981136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135981135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 2
-  levelEnd: 1
 --- !u!61 &1135981137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5657,16 +5627,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -8, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -7, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -5828,6 +5788,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -9, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -8, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -28305,7 +28275,6 @@ GameObject:
   - component: {fileID: 1794447529}
   - component: {fileID: 1794447528}
   - component: {fileID: 1794447527}
-  - component: {fileID: 1794447526}
   m_Layer: 0
   m_Name: StartFlower
   m_TagString: Checkpoints
@@ -28313,20 +28282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1794447526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794447525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointNum: 0
-  levelEnd: 0
 --- !u!61 &1794447527
 BoxCollider2D:
   m_ObjectHideFlags: 0

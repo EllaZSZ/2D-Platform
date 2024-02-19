@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cf6d7aaaccb2f47b7898b164268e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: LevelThree
 --- !u!58 &339477163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -384,7 +385,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -451,7 +452,7 @@ Transform:
   m_GameObject: {fileID: 339477161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.87, y: 65.88, z: 0}
+  m_LocalPosition: {x: -6.8, y: 71.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -961,8 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointNum: 0
-  levelEnd: 0
 --- !u!61 &822445273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17956,8 +17955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointNum: 1
-  levelEnd: 0
 --- !u!61 &1466471784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18101,8 +18098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13d877727d5014dbbbda8cc9ffc657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointNum: 2
-  levelEnd: 1
 --- !u!61 &1527366881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28954,21 +28949,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2837871773377660221, guid: 39737183ba482094889e02383bb1b033, type: 3}
-      propertyPath: nextScene
-      value: LevelThree
-      objectReference: {fileID: 0}
     - target: {fileID: 3905246662929120685, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4177528305422905945, guid: 39737183ba482094889e02383bb1b033, type: 3}
+      propertyPath: DeathDisplayScript
+      value: 
+      objectReference: {fileID: 642912859}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.13
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.97
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.z

@@ -8,7 +8,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private Transform respawn;
-    DeathDisplay DeathDisplayScript;
+    [SerializeField] DeathDisplay DeathDisplayScript;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

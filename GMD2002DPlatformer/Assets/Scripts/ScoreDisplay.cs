@@ -16,8 +16,8 @@ public class ScoreDisplay : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void UpdateScore(int scoreInc)
+    void Update()
     {
-        _scoreText.text = "Score: " + scoreInc.ToString();
+        _scoreText.text = "Score: " + (ValueHolder.deaths).ToString();
     }
 }

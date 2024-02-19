@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class SunScene : MonoBehaviour
 {
+    [SerializeField] private string nextScene;
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(nextScene);
         }
     }
 }

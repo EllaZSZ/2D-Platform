@@ -295,21 +295,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2837871773377660221, guid: 39737183ba482094889e02383bb1b033, type: 3}
-      propertyPath: nextScene
-      value: Death
-      objectReference: {fileID: 0}
     - target: {fileID: 3905246662929120685, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4177528305422905945, guid: 39737183ba482094889e02383bb1b033, type: 3}
+      propertyPath: DeathDisplayScript
+      value: 
+      objectReference: {fileID: 514538222}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.05
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -1.84
       objectReference: {fileID: 0}
     - target: {fileID: 8224485810665948832, guid: 39737183ba482094889e02383bb1b033, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28551,6 +28551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cf6d7aaaccb2f47b7898b164268e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Escapism
 --- !u!58 &1795988141
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28580,7 +28581,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -28647,7 +28648,7 @@ Transform:
   m_GameObject: {fileID: 1795988139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 62.94, z: 0}
+  m_LocalPosition: {x: 0.1, y: 73.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
