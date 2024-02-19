@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     [SerializeField] private GameObject vinePrefab;
+    [SerializeField] private float horizontalDrag;
     private GameObject vine;
     private GameObject vineAnchor;
     private Vector3 vineDir = Vector3.zero;
@@ -40,15 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (vineOut) {
-                //if (Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) > 6)
-                //{
-                //    vine.transform.GetChild(1).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //    vine.transform.GetChild(2).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //    vine.transform.GetChild(3).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //    vine.transform.GetChild(4).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //    vine.transform.GetChild(5).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //    vine.transform.GetChild(6).GetChild(0).localScale = new Vector3(1, Vector3.Distance(vine.transform.GetChild(0).position, vine.transform.position) / 6, 1);
-                //}
+
             } else {
                 vineEnd = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 vineEnd.z = transform.position.z;
@@ -64,13 +57,14 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 vel = vineAnchor.transform.position - transform.position;
                 vel.Normalize();
-                rb.AddForce(vel * 2 * speed);
+                rb.AddForce(vel * 2 * speed * rb.mass);
             }
         } else
         {
             vineOut = false;
             Destroy(vine);
         }
+        rb.totalForce = new Vector2(rb.totalForce.x * horizontalDrag, rb.totalForce.y);
     }
 
 
